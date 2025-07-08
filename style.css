@@ -1,15 +1,91 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body background and font */
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top left, #3a4a69, #1b1f3b 70%),
+              linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #e0e6f0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: radial-gradient(circle at top left, #3a4a69, #1b1f3b 70%),
-              linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #e0e6f0;
   padding: 40px 20px;
+  animation: fadeIn 1s ease forwards;
 }
 
+/* Container */
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f0f4ff;
+  text-align: center;
+}
+
+/* Headings */
+h1, h2 {
+  color: #d0d7ff;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  animation: slideInDown 1s ease forwards;
+}
+
+/* Contact Cards */
+.contact-card p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #dce3f7;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Buttons */
+button {
+  background-color: #667eea;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+}
+button:hover {
+  background-color: #5566cc;
+  box-shadow: 0 6px 18px rgba(85, 102, 204, 0.9);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+/* Links */
+a {
+  color: #aabbff;
+  text-decoration: none;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #cdd6f4;
+}
+
+/* About Us Section */
 .about-section {
   display: flex;
   justify-content: center;
@@ -30,80 +106,20 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.3);
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+.about-item img:hover {
+  transform: scale(1.05);
 }
 
 .about-item p {
   font-size: 1rem;
   color: #f0f4ff;
   text-shadow: 0 0 6px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
 }
 
-
-.container {
-  text-align: center;
-  width: 100%;
-  max-width: 900px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 30px 40px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  color: #f0f4ff;
-}
-
-h1 {
-  margin-top: 0;
-  font-weight: 700;
-  font-size: 2.8rem;
-  color: #d0d7ff;
-  text-align: center;
-  margin-bottom: 40px;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-  animation: slideInDown 1s ease forwards;
-}
-
-.contact-card p {
-  font-size: 1.15rem;
-  line-height: 1.6;
-  margin: 15px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  color: #dce3f7;
-}
-
-a {
-  color: #aabbff;
-  text-decoration: none;
-  word-break: break-all;
-  transition: color 0.3s ease;
-}
-a:hover {
-  color: #cdd6f4;
-}
-
-button {
-  background-color: #667eea;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 22px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 10px;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
-}
-button:hover {
-  background-color: #5566cc;
-  box-shadow: 0 6px 18px rgba(85, 102, 204, 0.9);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
-}
-
+/* Responsive adjustments */
 @media (max-width: 600px) {
   .container {
     padding: 20px;
@@ -116,11 +132,38 @@ button:hover {
 
   .contact-card p {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   button {
-    margin: 8px 0 0 0;
+    margin-top: 10px;
     width: 100%;
+  }
+
+  .about-item {
+    max-width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
