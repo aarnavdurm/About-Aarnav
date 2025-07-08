@@ -1,16 +1,15 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: radial-gradient(circle at top left, #3a4a69, #1b1f3b 70%),
               linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: #e0e6f0;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 1s ease forwards;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #e0e6f0;
+  padding: 40px 20px;
 }
+
 
 
 .container {
