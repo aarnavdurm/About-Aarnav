@@ -1,112 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us</title>
-  <link rel="stylesheet" href="style.css">
   <style>
+    /* Reset some default styles */
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #ece9e6, #ffffff);
-      text-align: center;
-      padding: 50px;
-      animation: fadeIn 1s ease-in;
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #e0eafc);
+      color: #333;
+      min-height: 100vh;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
     }
 
     h1 {
-      font-size: 3em;
-      color: #2c3e50;
-      margin-bottom: 20px;
-      animation: slideIn 1s ease-out;
+      margin-top: 0;
+      font-weight: 700;
+      font-size: 2.8rem;
+      color: #222;
+      text-align: center;
+      margin-bottom: 40px;
+      animation: slideInDown 0.8s ease forwards;
     }
 
-    .contact-card {
-      background: white;
-      max-width: 500px;
-      margin: 20px auto;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .contact-card:hover {
-      transform: scale(1.03);
-    }
-
-    .contact-info {
-      text-align: left;
-      font-size: 1.1em;
-    }
-
-    .contact-info p {
+    .contact-card p {
+      font-size: 1.15rem;
+      line-height: 1.6;
       margin: 15px 0;
-    }
-
-    .icon {
-      margin-right: 10px;
-      color: #3498db;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     a {
       color: #3498db;
       text-decoration: none;
+      word-break: break-all;
     }
 
     button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #2ecc71;
+      background-color: #3498db;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      margin-left: 10px;
+      flex-shrink: 0;
     }
 
     button:hover {
-      background-color: #27ae60;
+      background-color: #2980b9;
     }
 
+    .contact-card {
+      margin-bottom: 30px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+        margin: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .contact-card p {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      button {
+        margin: 8px 0 0 0;
+        width: 100%;
+      }
+    }
+
+    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    @keyframes slideIn {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
+
   <script>
     function copyText(text) {
       navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard: " + text);
+        alert('Copied to clipboard: ' + text);
       });
     }
   </script>
 </head>
 <body>
-  <h1>Contact Us</h1>
+  <div class="container">
+    <h1>Contact Us</h1>
 
-  <div class="contact-card">
-    <div class="contact-info">
-      <p><strong>📱 Adi's Phone:</strong> <a href="tel:+447440291364">+44 7440 291364</a>
-        <button onclick="copyText('+447440291364')">Copy</button>
+    <div class="contact-card">
+      <p>
+        <strong>📱 Adi's Phone:</strong>
+        <span>
+          <a href="tel:+447440291364">+44 7440 291364</a>
+          <button onclick="copyText('+447440291364')">Copy</button>
+        </span>
       </p>
-      <p><strong>📱 Aarnav's Phone:</strong> <a href="tel:+971556308543">+971 5563 08543</a>
-        <button onclick="copyText('+971556308543')">Copy</button>
+
+      <p>
+        <strong>📱 Aarnav's Phone:</strong>
+        <span>
+          <a href="tel:+971556308543">+971 5563 08543</a>
+          <button onclick="copyText('+971556308543')">Copy</button>
+        </span>
       </p>
-      <p><strong>📧 Adi's Email:</strong> <a href="mailto:adidham08@gmail.com">adidham08@gmail.com</a>
-        <button onclick="copyText('adidham08@gmail.com')">Copy</button>
+
+      <p>
+        <strong>📧 Adi's Email:</strong>
+        <span>
+          <a href="mailto:adidham08@gmail.com">adidham08@gmail.com</a>
+          <button onclick="copyText('adidham08@gmail.com')">Copy</button>
+        </span>
       </p>
-      <p><strong>📧 Aarnav's Email:</strong> <a href="mailto:aarnavdham11@gmail.com">aarnavdham11@gmail.com</a>
-        <button onclick="copyText('aarnavdham11@gmail.com')">Copy</button>
+
+      <p>
+        <strong>📧 Aarnav's Email:</strong>
+        <span>
+          <a href="mailto:aarnavdham11@gmail.com">aarnavdham11@gmail.com</a>
+          <button onclick="copyText('aarnavdham11@gmail.com')">Copy</button>
+        </span>
       </p>
     </div>
-  </div>
 
-  <a href="index.html"><button>← Back to Home</button></a>
+    <a href="index.html"><button>← Back to Home</button></a>
+  </div>
 </body>
 </html>
