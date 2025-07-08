@@ -1,51 +1,94 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  text-align: center;
-  padding: 50px;
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top left, #3a4a69, #1b1f3b 70%), 
+              linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #e0e6f0;
+  min-height: 100vh;
+  animation: fadeIn 1s ease forwards;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #f0f4ff;
 }
 
 h1 {
-  color: #3498db;
-  font-size: 3em;
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 2.8rem;
+  color: #d0d7ff;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  animation: slideInDown 1s ease forwards;
 }
 
-h2 {
-  margin-top: 40px;
-  color: #2c3e50;
-}
-
-img {
-  margin-top: 20px;
-  border-radius: 10px;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin: 10px 0;
+.contact-card p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  color: #dce3f7;
 }
 
 a {
-  color: #e67e22;
+  color: #aabbff;
   text-decoration: none;
-  font-weight: bold;
+  word-break: break-all;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #cdd6f4;
 }
 
 button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #2ecc71;
+  background-color: #667eea;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.6);
+}
+button:hover {
+  background-color: #5566cc;
+  box-shadow: 0 6px 18px rgba(85, 102, 204, 0.9);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 
-button:hover {
-  background-color: #27ae60;
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .contact-card p {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  button {
+    margin: 8px 0 0 0;
+    width: 100%;
+  }
 }
